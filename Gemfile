@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'kaminari'
+gem 'validates_timeliness'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -33,12 +34,14 @@ gem "cocoon"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'factory_bot_rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'rspec-rails', '~> 5.0.0'
   gem 'faker'
   gem 'factory_bot_rails'
+  gem 'rspec-validates_timeliness'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
@@ -55,8 +58,10 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
+  gem 'factory_bot_rails'
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers', '~> 4.0'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end

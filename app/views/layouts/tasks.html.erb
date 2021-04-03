@@ -52,8 +52,8 @@
                 <img src="templates/gentelella/production/images/img.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span>Welcome,</span>
-                <h2>John Doe</h2>
+                <span>Seja Bem vindo(a),</span>
+                <h2><%= current_user.full_name %></h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -63,11 +63,21 @@
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
-                <h3>General</h3>
+                <h3>Geral</h3>
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-home"></i> Minhas Metas<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="index.html">Dashboard</a></li>
+                      <li><a href="index.html">Acompanhar Metas</a></li>
+                      <li><a href="index.html">Criar Metas</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-user"></i> Meu Perfil<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li>
+                        <%= link_to "Editar Perfil", edit_user_registration_path %>
+                      </li>
                     </ul>
                   </li>
                 </ul>
@@ -105,7 +115,7 @@
               <ul class=" navbar-right">
                 <li class="nav-item dropdown open" style="padding-left: 15px;">
                   <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                    <img src="/templates/gentelella/production/images/img.jpg" alt="">John Doe
+                    <img src="/templates/gentelella/production/images/img.jpg" alt=""><%= current_user.full_name %>
                   </a>
                   <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item"  href="javascript:;"> Profile</a>
