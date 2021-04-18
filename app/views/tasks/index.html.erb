@@ -1,37 +1,119 @@
-<p id="notice"><%= notice %></p>
+<div class="page-title">
+  <div class="title_left">
+    <h3>Minhas <small>Metas</small></h3>
+  </div>
 
-<h1>Tasks</h1>
+  <div class="title_right">
+    <div class="col-md-8 col-sm-5 form-group pull-right top_search">
+      <div class="input-group">
+        <%= link_to new_task_path,  :class => 'btn btn-success' do %>
+          <i class="fa fa-plus"></i> <strong>Cadastrar nova meta</strong>
+        <% end %>
+        <input type="text" class="form-control" placeholder="Procure meta">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">Pesquisar Metas</button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-12 col-sm-12  ">
+  <div class="x_panel">
+    <div class="x_title">
+      <h2>Metas <small></small></h2>
+      <ul class="nav navbar-right panel_toolbox">
+        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+        </li>
+      </ul>
+      <div class="clearfix"></div>
+    </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Status</th>
-      <th>Estimative</th>
-      <th>Value</th>
-      <th>Priority</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <div class="x_content">
 
-  <tbody>
-    <% @tasks.each do |task| %>
-      <tr>
-        <td><%= task.name %></td>
-        <td><%= task.description %></td>
-        <td><%= task.status %></td>
-        <td><%= task.estimative %></td>
-        <td><%= task.value %></td>
-        <td><%= task.priority %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <p>Acompanhe suas metas, você vai conseguir cumpri-las! </p>
 
-<br>
+      <div class="table-responsive">
+        <table class="table table-striped jambo_table bulk_action">
+          <thead>
+            <tr class="headings">
+              <th>
+                <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" id="check-all" class="flat" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 0px none; opacity: 0;"></ins></div>
+              </th>
+              <th class="column-title" style="display: table-cell;">Meta </th>
+              <th class="column-title" style="display: table-cell;">Descrição da meta </th>
+              <th class="column-title" style="display: table-cell;">Status </th>
+              <th class="column-title" style="display: table-cell;">Estimativa </th>
+              <th class="column-title" style="display: table-cell;">Valor </th>
+              <th class="column-title" style="display: table-cell;">prioridade </th>
+              <th class="column-title no-link last" style="display: table-cell;"><span class="nobr">Action</span>
+              </th>
+              <th class="bulk-actions" colspan="7" style="display: none;">
+                <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt">1 Records Selected</span> ) <i class="fa fa-chevron-down"></i></a>
+              </th>
+            </tr>
+          </thead>
 
-<%= link_to 'New Task', new_task_path %>
+          <tbody>
+            <tr class="odd pointer">
+              <td class="a-center ">
+                <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" class="flat" name="table_records" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 0px none; opacity: 0;"></ins></div>
+              </td>
+              <td class=" ">121000037</td>
+              <td class=" ">May 26, 2014 10:52:44 PM</td>
+              <td class=" ">121000204</td>
+              <td class=" ">Mike Smith</td>
+              <td class=" ">Paid</td>
+              <td class="a-right a-right ">$333.21</td>
+              <td class=" last"><a href="#">View</a>
+              </td>
+            </tr>
+
+            <tr class="even pointer">
+              <td class="a-center ">
+                <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" class="flat" name="table_records" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 0px none; opacity: 0;"></ins></div>
+              </td>
+              <td class=" ">121000040</td>
+              <td class=" ">May 27, 2014 11:47:56 PM </td>
+              <td class=" ">121000210</td>
+              <td class=" ">John Blank L</td>
+              <td class=" ">Paid</td>
+              <td class="a-right a-right ">$7.45</td>
+              <td class=" last"><a href="#">View</a>
+              </td>
+            </tr>
+            <tr class="odd pointer">
+              <td class="a-center ">
+                <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" class="flat" name="table_records" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 0px none; opacity: 0;"></ins></div>
+              </td>
+              <td class=" ">121000039</td>
+              <td class=" ">May 28, 2014 11:30:12 PM</td>
+              <td class=" ">121000208</td>
+              <td class=" ">John Blank L</td>
+              <td class=" ">Paid</td>
+              <td class="a-right a-right ">$741.20</td>
+              <td class=" last"><a href="#">View</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+<!-- jQuery -->
+<script src="/templates/gentelella/vendors/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="/templates/gentelella/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<!-- FastClick -->
+<script src="/templates/gentelella/vendors/fastclick/lib/fastclick.js"></script>
+<!-- NProgress -->
+<script src="/templates/gentelella/vendors/nprogress/nprogress.js"></script>
+<!-- iCheck -->
+<script src="/templates/gentelella/vendors/iCheck/icheck.min.js"></script>
+
+<!-- Custom Theme Scripts -->
+<script src="/templates/gentelella/build/js/custom.min.js"></script>
